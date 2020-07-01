@@ -36,7 +36,7 @@ def run_formatter():
                 except AttributeError:
                     link = " [Error]"
 
-                fileWriter.write("<strong>" + '<a href="https://' + link.group() + '>"' +
+                fileWriter.write("<strong>" + '<a href="https://' + link.group() + '">' +
                                  '</a>' + x.split(",", 1)[1] + "</strong>\n")
                 counter += 1
                 continue

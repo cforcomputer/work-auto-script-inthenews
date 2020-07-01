@@ -1,5 +1,7 @@
 import kivy
 import main_format_run as input_format
+import pkg_resources.py2_warn
+
 
 from kivy.app import App
 
