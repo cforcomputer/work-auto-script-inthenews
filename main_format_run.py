@@ -24,7 +24,7 @@ def run_formatter():
             # If the start of a paragraph
             if counter == 0:
                 # Write the first line to be capital
-                fileWriter.write("\n\n<h3>" + x + "</h3>\n")
+                fileWriter.write("\n\n<h3>" + x.capitalize() + "</h3>\n")
                 # If not the first paragraph, it is the second paragraph
                 counter += 1
                 continue
@@ -36,14 +36,16 @@ def run_formatter():
                 except AttributeError:
                     link = " [Error]"
 
-                fileWriter.write("<p><strong>" + '<a href="https://' + link.group() + '">' + link.group() +
-                                 '</a>' + ", " + x.split(",", 1)[1] + "</strong>\n<br />")
+                fileWriter.write("<p><strong>" + '<a href="https://' + link.group().lower() + '">' +
+                                 link.group().lower() + '</a>' + ", " + x.split(",", 1)[1] + "</strong>\n<br />")
                 counter += 1
                 continue
             # Else it is the third paragraph
             else:
-                fileWriter.write(x.split(".", 1)[0] + ".<i>" +
-                                 x.split(".", 1)[1] + "</i>" + "</p>")
+                first_sentence = x.split(".", 1)[0]
+                italicized_sentence = x.split(".", 1)[1]
+                fileWriter.write(first_sentence + ".<i>" + italicized_sentence
+                                 + "</i>" + "</p>")
             counter = 3
         else:
             counter = 0
