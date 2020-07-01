@@ -36,13 +36,13 @@ def run_formatter():
                 except AttributeError:
                     link = " [Error]"
 
-                fileWriter.write("<strong>" + '<a href="https://' + link.group() + '">' +
-                                 '</a>' + x.split(",", 1)[1] + "</strong>\n")
+                fileWriter.write("<p><strong>" + '<a href="https://' + link.group() + '">' + link.group() +
+                                 '</a>' + ", " + x.split(",", 1)[1] + "</strong>\n<br />")
                 counter += 1
                 continue
             # Else it is the third paragraph
             else:
-                fileWriter.write("<p>" + x.split(".", 1)[0] + ".<i>" +
+                fileWriter.write(x.split(".", 1)[0] + ".<i>" +
                                  x.split(".", 1)[1] + "</i>" + "</p>")
             counter = 3
         else:
