@@ -1,5 +1,4 @@
 .spec
+/.idea
 /dist
 /build
-.*
-!/.gitignore
