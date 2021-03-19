@@ -28,11 +28,13 @@ class Newser(App):
         # Adding the text input
         text_box = TextInput(font_size=12,
                              size_hint_y=12,
-                             height=50)
+                             height=30)
 
         with open("input.txt", "w+") as f:
             contents = f.read()
             text_box.text = contents
+
+        
 
         # The format button gui
         btn = Button(text="Format",
